@@ -5,7 +5,7 @@ import Profile from '../views/Profile';
 const routes = [
   {
     path: '/',
-    name: 'Catolog',
+    name: 'Catalog',
     component: Catalog,
   },
   {
@@ -18,6 +18,17 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  console.log(to, from);
+  if (from.name === 'Profile') {
+    console.log('PROFILE PAGE IS CLOSED');
+  }
+  if (to.name === 'Catalog') {
+    console.log('CATALOG PAGE IS OPENED');
+  }
+  next();
 });
 
 export default router;
