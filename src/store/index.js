@@ -5,8 +5,13 @@ export default createStore({
     avatar: 'https://picsum.photos/seed/picsum/200/300',
     fullname: 'Vasya Petrov',
     age: 30,
+    showAvatar: true,
   },
-  mutations: {},
+  mutations: {
+    hideAvatar(state) {
+      state.showAvatar = false;
+    },
+  },
   actions: {},
   modules: {},
 });
